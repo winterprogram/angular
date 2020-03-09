@@ -1,1 +1,27 @@
-<p>blog-view works!</p>
+<div class="container">
+    <div style="text-align: center;">
+        <h2 *ngIf="currentBlog">
+            {{currentBlog.title |uppercase}}
+        </h2>
+        <p> posted by {{currentBlog.posted}} on {{currentBlog.created | date}} </p>
+        <p *ngIf="currentBlog.tags!=undefined && currentBlog.tags.length>0"> Tags :<span *ngFor = "let t of currentBlog.tags">
+            {{t}}
+        </span>
+            
+        </p> 
+    </div>
+    <!-- tags -->
+        <hr>  
+    
+    <div style="text-align: center;">
+        <p *ngIf="currentBlog">
+            <div [innerHtml] = "currentBlog.bodyHtml">
+           <p>
+            {{currentBlog.description}}
+           </p> 
+           
+            </div>
+        <hr>  
+    </div>
+   
+</div>
