@@ -1,1 +1,26 @@
-<p>blog-create works!</p>
+<div class="container">
+    <form #createBlogform="ngForm" (ngSubmit)="createBlog()">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Blog Title</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                name="blogTitle" [(ngModel)]="blogTitle" #title="ngModel" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Blog Description</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                name="blogDescription" [(ngModel)]="blogDescription" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Blog Body</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                name="blogBodyHtml" [(ngModel)]="blogBodyHtml" required>
+        </div>
+        <div class="form-group">
+            <label *ngIf="blogdata"> Category </label>
+            <select #category="ngModel" name="blogCategory" [(ngModel)]="blogCategory">
+                <option *ngFor="let category of blogCategory" [value]="category">{{category}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Edit the blog</button>
+    </form>
+</div>

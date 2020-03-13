@@ -4,7 +4,7 @@
             All Blogs
         </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf = "allBlogs.length >0">
         <div class="col-md-4" *ngFor="let blog of allBlogs">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
