@@ -1,0 +1,62 @@
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light colr">
+        <a class="navbar-brand">Chat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="['/login']">Login <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <form class="container pd" #createBlogform="ngForm" (ngSubmit)="signup()">
+        <h2 style="text-align: center">Signup form</h2>
+
+        <div class="form-group">
+            <label for="first">First Name</label>
+            <input type="text" class="form-control" id="first" name="firstName" [(ngModel)]="firstName"
+                aria-describedby="emailHelp">
+        </div>
+
+        <div class="form-group">
+            <label for="last">Last Name</label>
+            <input type="text" class="form-control" id="last" name="lastName" [(ngModel)]="lastName"
+                aria-describedby="emailHelp">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email"
+                aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="m">Mobile Number</label>
+            <input type="text" class="form-control" id="m" name="mobileNumber" [(ngModel)]="mobileNumber"
+                aria-describedby="emailHelp">
+        </div>
+
+
+        <div class="form-group">
+            <label for="pass">Password</label>
+            <input type="password" id="pass" class="form-control" name="password" [(ngModel)] ="password">
+        </div>
+
+        <div class="form-group">
+            <label for="api">Api Key</label>
+            <textarea type="text" class="form-control" id="api" name="apiKey" [(ngModel)]="apiKey"
+                aria-describedby="emailHelp"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="signup()">Submit</button>
+    </form>
+
+
+</div>
+
+
+<router-outlet></router-outlet>
