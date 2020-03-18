@@ -9,7 +9,8 @@ import { from } from 'rxjs';
 @Component({
   selector: 'app-chat-box',
   templateUrl: './chat-box.component.html',
-  styleUrls: ['./chat-box.component.css']
+  styleUrls: ['./chat-box.component.css'],
+  providers:[SocketService]
 })
 export class ChatBoxComponent implements OnInit {
 
@@ -26,7 +27,9 @@ export class ChatBoxComponent implements OnInit {
     this.receiverName = this.cookie.get('receiverName');
     this.userId = this.cookie.get('userId');
     this.authToken = this.cookie.get('authToken');
+    // this.socket = io(this.socket.url)
   }
+  
 
 
   ngOnInit(): void {

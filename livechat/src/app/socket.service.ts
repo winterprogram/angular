@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class SocketService {
  
-  private url: "https://chatapi.edwisor.com"
+  public url: "https://chatapi.edwisor.com"
   private socket;
   constructor(public http: HttpClient, public Cookie: CookieService) {
     this.socket = io(this.url);

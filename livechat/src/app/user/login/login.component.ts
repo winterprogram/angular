@@ -35,7 +35,9 @@ export class LoginComponent implements OnInit {
             this.cookieService.set('receiverName', apiResponse.data.userDetails.firstName + ' ' + apiResponse.data.userDetails.lastName),
             this.app.setUserInfoFromLocalStorage(apiResponse.data.userDetails)
 
+          console.log(this.cookieService)
           alert("login successful");
+        
           setTimeout(() =>
             this.route.navigate(['chats']), 1000)
         }
