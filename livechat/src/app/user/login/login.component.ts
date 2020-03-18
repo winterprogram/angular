@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
           // set cookie
           this.cookieService.set('authToken', apiResponse.data.authToken),
             this.cookieService.set('receiverId', apiResponse.data.userDetails.userId),
-            this.cookieService.set('receiverName', apiResponse.data.userDetails.firstName + '' + apiResponse.data.userDetails.lastName),
+            this.cookieService.set('receiverName', apiResponse.data.userDetails.firstName + ' ' + apiResponse.data.userDetails.lastName),
             this.app.setUserInfoFromLocalStorage(apiResponse.data.userDetails)
 
           alert("login successful");

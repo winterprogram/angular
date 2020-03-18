@@ -8,7 +8,7 @@ import { UserModule } from './user/user.module';
 import { ShareModule } from './share/share.module';
 import { RouterModule, Route } from '@angular/router'
 import { LoginComponent } from './user/login/login.component';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { AppService } from './app.service';
 
 
@@ -23,9 +23,10 @@ import { AppService } from './app.service';
     UserModule,
     ShareModule,
     HttpClientModule,
-    
+
     RouterModule.forRoot([
-      { path: 'login', component: LoginComponent }
+      { path: 'login', component: LoginComponent },
+      { path: '', component: LoginComponent }
     ])
   ],
   providers: [AppService],
